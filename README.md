@@ -10,4 +10,4 @@ Okazanta is released under the BSD-3 license [![Software License](https://img.sh
 
 ## Okawhat?
 
-The name (loosely) comes from the Esperanto word for occurrence or incident. Both of those words seem to fit for an app that reports what is happening, and since the project is universal and open to all, why not a little bit of Esperanto :)
+The name (loosely) comes from the Esperanto word for occurrence or incident. Both of those words seem a good fit for an app that reports what is happening, the OK at the sart of the word implies a 'positive status check', and since the project is universal and open to all, why not a little bit of Esperanto :)
