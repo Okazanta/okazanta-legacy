@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-## Creating issues
+## Creating issues
 
 Feature requests and bug reports should be made by using the [issue tracker](https://github.com/Okazanta/Okazanta-core/issues).
 
