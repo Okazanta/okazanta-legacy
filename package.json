@@ -4,7 +4,7 @@
     "gulp": "~3.9.1",
     "laravel-elixir": "~6.0.0-9",
     "animate-sass": "git+https://github.com/tgdev/animate-sass.git",
-    "autosize": "^3.0.15",
+    "autosize": "^5.0.1",
     "bootstrap-sass": "^3.3.6",
     "chart.js": "^2.2.0",
     "eonasdan-bootstrap-datetimepicker": "~3.1",
