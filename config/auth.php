@@ -1,7 +1,11 @@
 <?php
 
 /*
- * This file is part of Cachet.
+ * This file is part of Okazanta.
+ *
+ * (c) Okazanta <hello@okazanta.com>
+ *
+ * Some code may be inherited from Cachet
  *
  * (c) Alt Three Services Limited
  *
