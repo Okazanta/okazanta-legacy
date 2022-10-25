@@ -2,9 +2,13 @@
 
 Okazanta is modern open source status page software that anyone can use to create a clean and accessible status page for any kind of services.
 
-This project is a fork of the currently unmaintained [Cachet](https://github.com/CachetHQ/Cachet) project. It was created with the initial aim of modernising cachet, squashing bugs, and updating security.
+This project is a fork of the currently unmaintained [Cachet](https://github.com/CachetHQ/Cachet) project.
 
-Further down the line we intend to update the functionality and to add server uptime status monitors to create a completely automated monitoring and status page solution
+Okazanta was created with two purposes.
+
+1. To maintain, update, and modernise Cachet, squashing bugs, and updating security. 
+
+2. To add realtime server and site status monitoring with automatic alerts and status page updates. 
 
 Okazanta is released under the BSD-3 license [![Software License](https://img.shields.io/badge/license-BSD3-brightgreen.svg?style=flat-square)](LICENSE)
 
