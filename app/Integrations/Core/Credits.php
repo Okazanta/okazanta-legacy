@@ -27,7 +27,7 @@ class Credits implements CreditsContract
      *
      * @var string
      */
-    const URL = 'https://cachethq.io/credits';
+    const URL = 'https://okazanta.com/credits';
 
     /**
      * The failed status indicator.

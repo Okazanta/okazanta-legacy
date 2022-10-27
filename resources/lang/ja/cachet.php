@@ -119,7 +119,7 @@ return [
     ],
 
     'system' => [
-        'update' => 'Cachetの新しいバージョンがあります。アップデートの方法については<a href="https://docs.cachethq.io/docs/updating-cachet">こちら</a>を参照して下さい！',
+        'update' => 'Okazantaの新しいバージョンがあります。アップデートの方法については<a href="https://docs.okazanta.com/docs/updating-okazanta">こちら</a>を参照して下さい！',
     ],
 
     // Modal
@@ -135,7 +135,7 @@ return [
     // Other
     'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://okazanta.com" class="links">Okazanta</a>.',
     'about_this_site' => 'このサイトについて',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

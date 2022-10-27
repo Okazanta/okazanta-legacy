@@ -119,7 +119,7 @@ return [
     ],
 
     'system' => [
-        'update' => 'Μια ενημερωμένη έκδοση του Cache είναι διαθέσιμη. Δείτε πως μπορείτε να αναβαθμίσετε <a href="https://docs.cachethq.io/docs/updating-cachet">εδώ</a>!',
+        'update' => 'Μια ενημερωμένη έκδοση του Okazanta είναι διαθέσιμη. Δείτε πως μπορείτε να αναβαθμίσετε <a href="https://docs.okazanta.com/docs/updating-okazanta">εδώ</a>!',
     ],
 
     // Modal
@@ -135,7 +135,7 @@ return [
     // Other
     'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://okazanta.com" class="links">Okazanta</a>.',
     'about_this_site' => 'Σχετικά με αυτόν τον ιστότοπο',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

@@ -36,7 +36,7 @@ class AddComponentCommandTest extends AbstractTestCase
             'name'        => 'Test',
             'description' => 'Foo',
             'status'      => 1,
-            'link'        => 'https://cachethq.io',
+            'link'        => 'https://okazanta.com',
             'order'       => 0,
             'group_id'    => 0,
             'enabled'     => true,
