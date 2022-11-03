@@ -25,6 +25,7 @@ use CachetHQ\Cachet\Notifications\Schedule\NewScheduleNotification;
 use CachetHQ\Cachet\Settings\Repository as SettingsRepository;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Str;
 
 class MailTest extends AbstractTestCase
 {
