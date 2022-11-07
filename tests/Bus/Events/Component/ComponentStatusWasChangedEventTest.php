@@ -41,7 +41,7 @@ class ComponentStatusWasChangedEventTest extends AbstractComponentEventTestCase
 
         $subscriber->subscriptions()->create(['component_id' => $component->id]);
 
-        $this->app['events']->fire(new ComponentStatusWasChangedEvent($user, $component, 1, 2, false));
+        $this->app['events']->dispatch(new ComponentStatusWasChangedEvent($user, $component, 1, 2, false));
 
         $this->seeMessageFor($subscriber->email);
         $this->seeMessageWithSubject(trans('notifications.component.status_update.mail.subject'));

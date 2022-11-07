@@ -51,7 +51,8 @@ class UpdateConfigCommandHandler
         $path = "{$dir}/{$file}";
 
         try {
-            (new Dotenv($dir, $file))->load();
+            $dotenv = Dotenv::create($dir, $file);
+            $dotenv->load();
 
             $envKey = strtoupper($key);
             $envValue = env($envKey) ?: 'null';

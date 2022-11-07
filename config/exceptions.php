@@ -26,9 +26,11 @@ return [
     */
 
     'transformers' => [
-        'GrahamCampbell\Exceptions\Transformers\AuthTransformer',
-        'GrahamCampbell\Exceptions\Transformers\CsrfTransformer',
-        'GrahamCampbell\Exceptions\Transformers\ModelTransformer',
+        GrahamCampbell\Exceptions\Transformer\BadHeadersTransformer::class,
+        GrahamCampbell\Exceptions\Transformer\BadHostTransformer::class,
+        GrahamCampbell\Exceptions\Transformer\AuthTransformer::class,
+        GrahamCampbell\Exceptions\Transformer\CsrfTransformer::class,
+        GrahamCampbell\Exceptions\Transformer\ModelTransformer::class,
         'CachetHQ\Cachet\Exceptions\Transformers\BusTransformer',
     ],
 
@@ -52,10 +54,11 @@ return [
         'CachetHQ\Cachet\Exceptions\Displayers\RedirectDisplayer',
         'CachetHQ\Cachet\Exceptions\Displayers\ThrottleDisplayer',
         'CachetHQ\Cachet\Exceptions\Displayers\JsonValidationDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\JsonApiDisplayer',
+        GrahamCampbell\Exceptions\Displayer\DebugDisplayer::class,
+        GrahamCampbell\Exceptions\Displayer\ViewDisplayer::class,
+        GrahamCampbell\Exceptions\Displayer\HtmlDisplayer::class,
+        GrahamCampbell\Exceptions\Displayer\JsonDisplayer::class,
+        GrahamCampbell\Exceptions\Displayer\JsonApiDisplayer::class,
     ],
 
     /*
@@ -72,9 +75,9 @@ return [
     */
 
     'filters' => [
-        'GrahamCampbell\Exceptions\Filters\VerboseFilter',
-        'GrahamCampbell\Exceptions\Filters\CanDisplayFilter',
-        'GrahamCampbell\Exceptions\Filters\ContentTypeFilter',
+        GrahamCampbell\Exceptions\Filter\VerboseFilter::class,
+        GrahamCampbell\Exceptions\Filter\CanDisplayFilter::class,
+        GrahamCampbell\Exceptions\Filter\ContentTypeFilter::class,
         'CachetHQ\Cachet\Exceptions\Filters\ApiFilter',
     ],
 
@@ -90,7 +93,7 @@ return [
     |
     */
 
-    'default' => 'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
+    'default' => GrahamCampbell\Exceptions\Displayer\HtmlDisplayer::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -105,12 +108,14 @@ return [
     */
 
     'levels' => [
-        'Illuminate\Auth\Access\AuthorizationException'                 => 'warning',
-        'Illuminate\Database\Eloquent\ModelNotFoundException'           => 'warning',
-        'Illuminate\Session\TokenMismatchException'                     => 'notice',
-        'Symfony\Component\HttpKernel\Exception\HttpExceptionInterface' => 'notice',
-        'Symfony\Component\Debug\Exception\FatalErrorException'         => 'critical',
-        'Exception'                                                     => 'error',
+        Illuminate\Auth\Access\AuthorizationException::class                           => 'warning',
+        Illuminate\Database\Eloquent\ModelNotFoundException::class                     => 'warning',
+        Illuminate\Session\TokenMismatchException::class                               => 'notice',
+        Symfony\Component\HttpFoundation\Exception\RequestExceptionInterface::class    => 'notice',
+        Symfony\Component\HttpKernel\Exception\NotFoundHttpException::class            => 'notice',
+        Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException::class => 'error',
+        Symfony\Component\HttpKernel\Exception\HttpExceptionInterface::class           => 'warning',
+        Exception::class                                                               => 'error',
+        Throwable::class                                                               => 'critical',
     ],
-
 ];
