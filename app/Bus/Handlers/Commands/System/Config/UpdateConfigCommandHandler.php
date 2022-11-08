@@ -50,8 +50,9 @@ class UpdateConfigCommandHandler
         $file = app()->environmentFile();
         $path = "{$dir}/{$file}";
 
+        
         try {
-            $dotenv = Dotenv::create($dir, $file);
+            $dotenv = Dotenv::createImmutable($dir, $file);
             $dotenv->load();
 
             $envKey = strtoupper($key);
