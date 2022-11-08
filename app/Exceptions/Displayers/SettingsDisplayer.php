@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Exceptions\Displayers;
 
 use CachetHQ\Cachet\Settings\ReadException;
-use Exception;
-use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;
+use Throwable;
+use GrahamCampbell\Exceptions\Displayer\DisplayerInterface;
 use Illuminate\Http\Request;
 
 class SettingsDisplayer implements DisplayerInterface
@@ -47,7 +47,7 @@ class SettingsDisplayer implements DisplayerInterface
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function display(Exception $exception, string $id, int $code, array $headers)
+    public function display(Throwable $exception, string $id, int $code, array $headers)
     {
         return cachet_redirect('setup');
     }
@@ -71,7 +71,7 @@ class SettingsDisplayer implements DisplayerInterface
      *
      * @return bool
      */
-    public function canDisplay(Exception $original, Exception $transformed, int $code)
+    public function canDisplay(Throwable $original, Throwable $transformed, int $code)
     {
         return ($transformed instanceof ReadException) && !$this->request->is('setup*');
     }

@@ -31,7 +31,7 @@ return [
         GrahamCampbell\Exceptions\Transformer\AuthTransformer::class,
         GrahamCampbell\Exceptions\Transformer\CsrfTransformer::class,
         GrahamCampbell\Exceptions\Transformer\ModelTransformer::class,
-        'CachetHQ\Cachet\Exceptions\Transformers\BusTransformer',
+//        'CachetHQ\Cachet\Exceptions\Transformers\BusTransformer',
     ],
 
     /*

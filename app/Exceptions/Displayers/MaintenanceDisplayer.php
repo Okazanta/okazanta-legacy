@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Exceptions\Displayers;
 
-use Exception;
-use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;
+use Throwable;
+use GrahamCampbell\Exceptions\Displayer\DisplayerInterface;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Http\Exceptions\MaintenanceModeException;
 use Illuminate\Http\Response;
@@ -53,7 +53,7 @@ class MaintenanceDisplayer implements DisplayerInterface
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function display(Exception $exception, string $id, int $code, array $headers)
+    public function display(Throwable $exception, string $id, int $code, array $headers)
     {
         return new Response($this->render(), $code, array_merge($headers, ['Content-Type' => $this->contentType()]));
     }
@@ -87,7 +87,7 @@ class MaintenanceDisplayer implements DisplayerInterface
      *
      * @return bool
      */
-    public function canDisplay(Exception $original, Exception $transformed, int $code)
+    public function canDisplay(Throwable $original, Throwable $transformed, int $code)
     {
         return $transformed instanceof MaintenanceModeException;
     }

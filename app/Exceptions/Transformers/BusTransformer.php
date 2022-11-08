@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Exceptions\Transformers;
 
 use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
-use Exception;
-use GrahamCampbell\Exceptions\Transformers\TransformerInterface;
+use Throwable;
+use GrahamCampbell\Exceptions\Transformer\TransformerInterface;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
@@ -23,14 +23,7 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
  */
 class BusTransformer implements TransformerInterface
 {
-    /**
-     * Transform the provided exception.
-     *
-     * @param \Exception $exception
-     *
-     * @return \Exception
-     */
-    public function transform(Exception $exception)
+     public function transform(Throwable $exception)
     {
         if ($exception instanceof ExceptionInterface) {
             $exception = new BadRequestHttpException($exception->getMessage());

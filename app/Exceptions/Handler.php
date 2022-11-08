@@ -16,16 +16,4 @@ class Handler extends GrahamCampbellExceptionHandler
     protected $dontReport = [
         // \Illuminate\Database\Eloquent\ModelNotFoundException::class,
     ];
-
-    /**
-     * Register the exception handling callbacks for the application.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
-    }
 }
