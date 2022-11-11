@@ -11,3 +11,4 @@ npm-debug.log
 .env
 package-lock.json
 node_modules
+.phpunit.result.cache
