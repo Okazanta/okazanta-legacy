@@ -11,7 +11,8 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use CachetHQ\Badger\Facades\Badger;
+use PUGX\Poser\Poser;
+use PUGX\Poser\Render\SvgPlasticRender;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
@@ -200,7 +201,7 @@ class StatusPageController extends AbstractApiController
             default: $color = null;
         }
 
-        $badge = Badger::generate(
+        $badge = Poser::generate(
             $component->name,
             $component->human_status,
             substr($color, 1),

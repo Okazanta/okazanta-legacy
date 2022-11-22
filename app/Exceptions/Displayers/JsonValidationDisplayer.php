@@ -13,12 +13,11 @@ namespace CachetHQ\Cachet\Exceptions\Displayers;
 
 use AltThree\Validator\ValidationException;
 use Throwable;
-use GrahamCampbell\Exceptions\Displayer\DisplayerInterface;
 use GrahamCampbell\Exceptions\Displayer\AbstractJsonDisplayer;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class JsonValidationDisplayer extends AbstractJsonDisplayer
-{
+{    
     public function contentType()
     {
         return 'application/json';
