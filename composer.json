@@ -88,6 +88,7 @@
         "bugsnag/bugsnag-laravel": "^2.25",
         "chillerlan/php-qrcode": "^4.3",
         "doctrine/dbal": "^3.5",
+        "fakerphp/faker": "^1.20",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^3.0",
         "graham-campbell/binput": "^10.0",
@@ -112,7 +113,6 @@
         "alt-three/testbench": "^4.3",
         "barryvdh/laravel-debugbar": "^3.7",
         "filp/whoops": "^2.7.1",
-        "fzaninotto/faker": "^1.9",
         "graham-campbell/analyzer": "^3.1",
         "mockery/mockery": "^1.5",
         "phpunit/phpunit": "^9.5"
