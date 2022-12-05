@@ -69,6 +69,8 @@ class IncidentUpdatedNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        $manageUrl = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+
         $content = trans('notifications.incident.update.mail.content', [
             'name'    => $this->update->incident->name,
             'time'    => $this->update->created_at_diff,
@@ -87,7 +89,7 @@ class IncidentUpdatedNotification extends Notification
                 'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
                 'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
                 'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
-                'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+                'manageSubscriptionUrl'  => $manageUrl,
             ]);
     }
 

@@ -12,15 +12,19 @@
 namespace CachetHQ\Tests\Cachet\Functional\Notifications;
 
 use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
+use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
+use CachetHQ\Cachet\Models\Subscription;
 use CachetHQ\Cachet\Notifications\Incident\NewIncidentNotification;
 use CachetHQ\Cachet\Notifications\IncidentUpdate\IncidentUpdatedNotification;
+use CachetHQ\Cachet\Notifications\Component\ComponentStatusChangedNotification;
+use CachetHQ\Cachet\Notifications\Schedule\NewScheduleNotification;
 use CachetHQ\Cachet\Settings\Repository as SettingsRepository;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Str;
 
 class MailTest extends AbstractTestCase
@@ -117,8 +121,20 @@ class MailTest extends AbstractTestCase
     }
 
     /**
+     * @return Component
+     */
+    protected function createComponent()
+    {
+        $component = factory(Component::class)->create([
+            'status' => 1
+        ]);
+
+        return $component;
+    }
+
+    /**
      * Send an email notification to subscribers when a new incident
-     * is added.
+     * is added. Ensure the manage subscription link is signed.
      */
     public function testEmailNotificationSentForNewIncident()
     {
@@ -138,8 +154,53 @@ class MailTest extends AbstractTestCase
 
         Notification::assertSentTo(
             [$subscriber],
-            NewIncidentNotification::class
+            NewIncidentNotification::class,
+            function ($notification, $channels) use ($subscriber) {
+
+                $mail = $notification->toMail($subscriber)->toArray();
+                $this->assertEquals('New Incident Reported', $mail['subject']);
+
+                //@todo Check the rendered content of the email rather than the raw data passed to the MD
+                $bodyData = $notification->toMail($subscriber)->data();
+                $this->assertContains('?signature=', $bodyData['manageSubscriptionUrl']);
+                return true;
+            }
         );
+    }
+
+    /**
+     * Send an email notification to subscribers when a new schedule
+     * is added. Ensure the manage subscription link is signed.
+     */
+    public function testEmailNotificationSentForNewSchedule()
+    {
+        Notification::fake();
+
+        $this->signIn();
+
+        $subscriber = $this->createSubscriber($this->fakerFactory->safeEmail);
+
+        $response = $this->post('dashboard/schedule/create', [
+            'name'    => $this->fakerFactory->word,
+            'status'  => 0,
+            'message' => $this->fakerFactory->paragraph,
+            'scheduled_at'=> $this->fakerFactory->date('Y-m-d H:i'),
+            'notify'  => 1,
+        ]);
+
+        Notification::assertSentTo(
+            [$subscriber],
+            NewScheduleNotification::class,
+            function ($notification, $channels) use ($subscriber) {
+
+                $mail = $notification->toMail($subscriber)->toArray();
+                $this->assertEquals('New Schedule Created', $mail['subject']);
+
+                //@todo Check the rendered content of the email rather than the raw data passed to the MD
+                $bodyData = $notification->toMail($subscriber)->data();
+                $this->assertContains('?signature=', $bodyData['manageSubscriptionUrl']);
+                return true;
+            });
     }
 
     /**
@@ -187,7 +248,54 @@ class MailTest extends AbstractTestCase
 
         Notification::assertSentTo(
             [$subscriber],
-            IncidentUpdatedNotification::class
+            IncidentUpdatedNotification::class,
+            function ($notification, $channels) use ($subscriber) {
+
+                $mail = $notification->toMail($subscriber)->toArray();
+                $this->assertEquals('Incident Updated', $mail['subject']);
+
+                //@todo Check the rendered content of the email rather than the raw data passed to the MD
+                $bodyData = $notification->toMail($subscriber)->data();
+                $this->assertContains('?signature=', $bodyData['manageSubscriptionUrl']);
+                return true;
+            }
         );
+    }
+
+    /**
+     * Send an email notification to subscribers when a components
+     * status is updated.
+     */
+    public function testEmailNotificationSentForComponentStatusUpdate()
+    {
+        Notification::fake();
+
+        $this->signIn();
+
+        $component = $this->createComponent();
+        $subscriber = $this->createSubscriber($this->fakerFactory->safeEmail);
+        factory(Subscription::class)->create([
+            'subscriber_id' => $subscriber->id,
+            'component_id' => $component->id,
+        ]);
+
+        $response = $this->post('dashboard/api/components/' . $component->id, [
+            'status' => 2,
+            'component_id' => $component->id
+        ]);
+
+        Notification::assertSentTo(
+            [$subscriber],
+            ComponentStatusChangedNotification::class,
+            function ($notification, $channels) use ($subscriber) {
+
+                $mail = $notification->toMail($subscriber)->toArray();
+                $this->assertEquals('Component Status Updated', $mail['subject']);
+
+                //@todo Check the rendered content of the email rather than the raw data passed to the MD
+                $bodyData = $notification->toMail($subscriber)->data();
+                $this->assertContains('?signature=', $bodyData['manageSubscriptionUrl']);
+                return true;
+            });
     }
 }
