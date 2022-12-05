@@ -91,7 +91,10 @@ class SubscribeController extends Controller
         }
 
         // Send the subscriber a link to manage their subscription.
-        $subscription->notify(new ManageSubscriptionNotification());
+        if ($verified) {
+            // Send the subscriber a link to manage their subscription.
+            $subscription->notify(new ManageSubscriptionNotification());
+        }
 
         return redirect()->back()->withSuccess(
             sprintf(
