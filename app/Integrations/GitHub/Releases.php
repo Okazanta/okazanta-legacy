@@ -1,7 +1,11 @@
 <?php
 
 /*
- * This file is part of Cachet.
+ * This file is part of Okazanta.
+ *
+ * (c) Okazanta <hello@okazanta.com>
+ *
+ * Some code may be inherited from Cachet
  *
  * (c) Alt Three Services Limited
  *
@@ -22,7 +26,7 @@ class Releases implements ReleasesContract
      *
      * @var string
      */
-    const URL = 'https://api.github.com/repos/cachethq/cachet/releases/latest';
+    const URL = 'https://api.github.com/repos/okazanta/okazanta-core/releases/latest';
 
     /**
      * The failed status indicator.

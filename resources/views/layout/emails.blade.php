@@ -223,7 +223,7 @@
                                         <p class="sub center">{!! trans('cachet.powered_by') !!}</p>
                                         @endif
                                         <p class="sub center">
-                                            <a href="https://cachethq.io"><img src="{{ asset('img/button-email--dark-grey.png') }}" alt="Cachet"></a>
+                                            <a href="https://okazanta.com"><img src="{{ asset('img/button-email--dark-grey.png') }}" alt="Okazanta"></a>
                                         </p>
                                     </td>
                                 </tr>

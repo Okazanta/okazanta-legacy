@@ -119,7 +119,7 @@ return [
     ],
 
     'system' => [
-        'update' => 'Доступна новая версия Cachet. Инструкции по обновлению можно получить <a href="https://docs.cachethq.io/docs/updating-cachet">здесь</a>!',
+        'update' => 'Доступна новая версия Cachet. Инструкции по обновлению можно получить <a href="https://docs.okazanta.com/docs/updating-okazanta">здесь</a>!',
     ],
 
     // Modal
@@ -135,7 +135,7 @@ return [
     // Other
     'home'            => 'Главный экран',
     'description'     => 'Будьте в курсе последних новостей о состоянии сервиса от :app.',
-    'powered_by'      => 'Работает на <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Работает на <a href="https://okazanta.com" class="links">Okazanta</a>.',
     'about_this_site' => 'Об этом сайте',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

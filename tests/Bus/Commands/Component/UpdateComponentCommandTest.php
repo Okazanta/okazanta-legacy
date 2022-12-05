@@ -1,7 +1,11 @@
 <?php
 
 /*
- * This file is part of Cachet.
+ * This file is part of Okazanta.
+ *
+ * (c) Okazanta <hello@okazanta.com>
+ *
+ * Some code may be inherited from Cachet
  *
  * (c) Alt Three Services Limited
  *
@@ -34,7 +38,7 @@ class UpdateComponentCommandTest extends AbstractTestCase
             'name'        => 'Test',
             'description' => 'Foo',
             'status'      => 1,
-            'link'        => 'https://cachethq.io',
+            'link'        => 'https://okazanta.com',
             'order'       => 0,
             'group_id'    => 0,
             'enabled'     => true,

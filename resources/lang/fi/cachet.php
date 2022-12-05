@@ -119,7 +119,7 @@ return [
     ],
 
     'system' => [
-        'update' => 'Cachetistä on saatavilla uudempi versio. Katso miten päivitetään uudempaan versioon <a href="https://docs.cachethq.io/docs/updating-cachet">täältä</a>!',
+        'update' => 'Cachetistä on saatavilla uudempi versio. Katso miten päivitetään uudempaan versioon <a href="https://docs.okazanta.com/docs/updating-okazanta">täältä</a>!',
     ],
 
     // Modal
@@ -135,7 +135,7 @@ return [
     // Other
     'home'            => 'Etusivu',
     'description'     => 'Pysy ajan tasalla tilaamalla uusimmat päivitykset :app.',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://okazanta.com" class="links">Okazanta</a>.',
     'about_this_site' => 'Tietoa sivustosta',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

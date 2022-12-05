@@ -1,7 +1,11 @@
 <?php
 
 /*
- * This file is part of Cachet.
+ * This file is part of Okazanta.
+ *
+ * (c) Okazanta <hello@okazanta.com>
+ *
+ * Some code may be inherited from Cachet
  *
  * (c) Alt Three Services Limited
  *
@@ -28,7 +32,7 @@ class SubscribeSubscriberCommandTest extends AbstractTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['email' => 'support@cachethq.io', 'verified' => true, 'subscriptions' => null];
+        $params = ['email' => 'hello@okazanta.com', 'verified' => true, 'subscriptions' => null];
         $object = new SubscribeSubscriberCommand($params['email'], $params['verified'], $params['subscriptions']);
 
         return compact('params', 'object');

@@ -119,7 +119,7 @@ return [
     ],
 
     'system' => [
-        'update' => 'Der er en nyere version af Cachet tilgængelig. Du kan læse mere om hvordan du opdatere <a href="https://docs.cachethq.io/docs/updating-cachet">her</a>!',
+        'update' => 'Der er en nyere version af Cachet tilgængelig. Du kan læse mere om hvordan du opdatere <a href="https://docs.okazanta.com/docs/updating-okazanta">her</a>!',
     ],
 
     // Modal
@@ -135,7 +135,7 @@ return [
     // Other
     'home'            => 'Hjem',
     'description'     => 'Hold dig opdateret med de seneste opdateringer fra :app.',
-    'powered_by'      => 'Drevet af <a href="https://cachethq.io" class="links"> Cachet</a>.',
+    'powered_by'      => 'Drevet af <a href="https://okazanta.com" class="links">Okazanta</a>.',
     'about_this_site' => 'Om denne side',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

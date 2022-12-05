@@ -119,7 +119,7 @@ return [
     ],
 
     'system' => [
-        'update' => '有新版的Cachet可用，您可以<a href="https://docs.cachethq.io/docs/updating-cachet">点击这里</a>获取更新咨询',
+        'update' => '有新版的Cachet可用，您可以<a href="https://docs.okazanta.com/docs/updating-okazanta">点击这里</a>获取更新咨询',
     ],
 
     // Modal
@@ -135,7 +135,7 @@ return [
     // Other
     'home'            => '主屏幕',
     'description'     => '始终保持对 :app 服务状态的关注。',
-    'powered_by'      => '由 <a href="https://cachethq.io" class="links">Cachet</a> 驱动。',
+    'powered_by'      => '由 <a href="https://okazanta.com" class="links">Okazanta</a> 驱动。',
     'about_this_site' => '关于我们',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
