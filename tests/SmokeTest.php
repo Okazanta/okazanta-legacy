@@ -17,6 +17,8 @@ use CachetHQ\Cachet\Models\Setting;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Notification;
 use CachetHQ\Cachet\Notifications\Subscriber\VerifySubscriptionNotification;
+use CachetHQ\Cachet\Notifications\Subscriber\ManageSubscriptionNotification;
+
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Support\Facades\URL;
 
@@ -68,6 +70,10 @@ class SmokeTest extends AbstractTestCase
         Notification::assertSentTo(
             [$subscriber],
             VerifySubscriptionNotification::class
+        );
+        Notification::assertNotSentTo(
+            [$subscriber],
+            ManageSubscriptionNotification::class
         );
 
         $verify_route = URL::signedRoute(cachet_route_generator('subscribe.verify'), ['code' => $subscriber->verify_code]);
