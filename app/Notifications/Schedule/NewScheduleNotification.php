@@ -99,7 +99,7 @@ class NewScheduleNotification extends Notification implements ShouldQueue
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
 
-        return (new NexmoMessage())->content($content);
+        return (new NexmoMessage)->content($content);
     }
 
     /**
@@ -116,7 +116,7 @@ class NewScheduleNotification extends Notification implements ShouldQueue
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
 
-        return (new SlackMessage())
+        return (new SlackMessage)
                     ->content(trans('notifications.schedule.new.slack.title'))
                     ->attachment(function ($attachment) use ($content) {
                         $attachment->title($content)

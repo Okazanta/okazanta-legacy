@@ -22,15 +22,6 @@ class JsonValidationDisplayer extends AbstractJsonDisplayer
     {
         return 'application/json';
     }
-    
-    public function display(Throwable $exception, string $id, int $code, array $headers)
-    {
-        $info = $this->info->generate($exception, $id, 400);
-
-        $error = ['id' => $id, 'status' => $info['code'], 'title' => $info['name'], 'detail' => $info['detail'], 'meta' => ['details' => $exception->getMessageBag()->all()]];
-
-        return new JsonResponse(['errors' => [$error]], 400, array_merge($headers, ['Content-Type' => $this->contentType()]));
-    }
 
     public function canDisplay(Throwable $original, Throwable $transformed, int $code)
     {

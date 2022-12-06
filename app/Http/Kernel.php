@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http;
 
-use Barryvdh\Cors\HandleCors;
+use Fruitcake\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Admin;
 use CachetHQ\Cachet\Http\Middleware\ApiAuthentication;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
