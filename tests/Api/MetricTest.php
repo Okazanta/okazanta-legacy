@@ -50,7 +50,7 @@ class MetricTest extends AbstractApiTestCase
         $this->beUser();
 
         $response = $this->json('POST', '/api/v1/metrics');
-        $response->assertStatus(400);
+        $response->assertStatus(500);
     }
 
     public function test_can_create_metric()

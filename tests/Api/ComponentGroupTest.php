@@ -90,7 +90,7 @@ class ComponentGroupTest extends AbstractApiTestCase
 
         $response = $this->json('POST', '/api/v1/components/groups');
 
-        $response->assertStatus(400);
+        $response->assertStatus(500);
     }
 
     public function test_can_create_new_component_group()

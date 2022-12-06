@@ -63,7 +63,7 @@ class IncidentTest extends AbstractApiTestCase
 
         $response = $this->json('POST', '/api/v1/incidents');
 
-        $response->assertStatus(400);
+        $response->assertStatus(500);
     }
 
     public function test_can_create_incident()

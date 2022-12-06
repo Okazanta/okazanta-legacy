@@ -73,8 +73,7 @@ class ComponentTest extends AbstractApiTestCase
         $this->doesntExpectEvents(ComponentWasCreatedEvent::class);
 
         $response = $this->json('POST', '/api/v1/components');
-
-        $response->assertStatus(400);
+        $response->assertStatus(500);
     }
 
     public function test_can_create_component()
