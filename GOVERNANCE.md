@@ -21,7 +21,7 @@ Anybody is free to use the core Okazanta software within the terms of the [licen
 
 We really appreciate user contributions but if you just want to download, install, and go, then you have the complee freedom to do that.
 
-If you do want to be more involved in the community then the project [GitHub](https://github.com/Okazanta/Okazanta-core) page, the [Contribution Guidelines]((https://github.com/Okazanta/Okazanta-core/blob/master/CONTRIBUTING.md), and [Discord](https://discord.gg/4CtKuuHrqJ) are great places to start.
+If you do want to be more involved in the community then the project [GitHub](https://github.com/Okazanta/Okazanta-core) page, the [Contribution Guidelines](https://github.com/Okazanta/Okazanta-core/blob/master/CONTRIBUTING.md), and [Discord](https://discord.gg/4CtKuuHrqJ) are great places to start.
 
 ## Maintainers
 
